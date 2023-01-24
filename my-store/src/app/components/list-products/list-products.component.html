@@ -1,6 +1,34 @@
-<div class="products--drid">
+<!--<div class="products--drid">
   <app-product
     [product]="product"
     *ngFor="let product of products"
   ></app-product>
+</div>>-->
+<div class="container">
+
+  <button class="btn btn-info" type="button" [routerLink]="['/products/form']">Nuevo Producto</button>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">inInventory</th>
+      <th scope="col">enabled</th>
+      <th scope="col">min</th>
+      <th scope="col">max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.inInventory}}</td>
+      <td>{{product.enabled}}</td>
+      <td>{{product.min}}</td>
+      <td>{{product.max}}</td>
+    </tr>
+  </tbody>
+</table>
 </div>
