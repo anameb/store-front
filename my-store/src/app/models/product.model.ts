@@ -1,5 +1,5 @@
 export class Product {
-  id: string
+  id?: string
   name: string;
   inInventory: number;
   enabledProduct: boolean;
@@ -8,7 +8,6 @@ export class Product {
   image: string;
 
   constructor() {
-    this.id='';
     this.name='';
     this.inInventory=0;
     this.min=0;
@@ -16,6 +15,5 @@ export class Product {
     this.enabledProduct=false;
     this.image=''
   }
-
 
 }
