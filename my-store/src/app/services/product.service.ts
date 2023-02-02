@@ -24,7 +24,7 @@ export class ProductService {
   }
 
   //obtener producto por id
-  getProductById(id:number):Observable<Product> {
+  getProductById(id:string):Observable<Product> {
     return this.http.get<Product>(this.url + '/' + id);
   }
 
@@ -34,8 +34,8 @@ export class ProductService {
   }
 
   //eliminar un producto
-  delete(id:number):Observable<Product> {
-    return this.http.delete<Product>(this.url + '/' + id);
+  delete(id:string):Observable<string> {
+    return this.http.delete<string>(this.url + '/' + id);
   }
 
 }

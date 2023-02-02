@@ -36,8 +36,9 @@ export class ProductComponent implements OnInit {
     addForm!: FormGroup;
 
   ngOnInit(): void {
+
     this.addForm = this.formBuilder.group({
-      //id: [],
+      id: [],
       name: ['', [Validators.required, Validators.maxLength(50)]],
       inInventory: ['', [Validators.required, Validators.maxLength(10)]],
       min: ['', [Validators.required, Validators.maxLength(10)]],

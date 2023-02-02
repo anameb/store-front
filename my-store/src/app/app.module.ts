@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+
 
 //import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { BuyComponent } from './components/buy/buy.component';
 import { from } from 'rxjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { UpdateProductComponent } from './components/update-product/update-product.component';
 
 
 @NgModule({
@@ -26,6 +29,7 @@ import { AppRoutingModule } from './app-routing.module';
     ProductComponent,
     ListProductsComponent,
     BuyComponent,
+    UpdateProductComponent,
 
   ],
   imports: [
@@ -39,6 +43,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatIconModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatTableModule,
     AppRoutingModule
   ],
   providers: [],
