@@ -4,31 +4,99 @@
     *ngFor="let product of products"
   ></app-product>
 </div>>-->
+<div class="example-table-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id. </th>
+      <td mat-cell *matCellDef="let products"> {{products.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> name </th>
+      <td mat-cell *matCellDef="let products"> {{products.name}} </td>
+    </ng-container>
+
+    <!-- inInventory Column -->
+    <ng-container matColumnDef="inInventory">
+      <th mat-header-cell *matHeaderCellDef> inInventory </th>
+      <td mat-cell *matCellDef="let products"> {{products.inInventory}} </td>
+    </ng-container>
+
+    <!-- enabled Column -->
+    <ng-container matColumnDef="enabled">
+      <th mat-header-cell *matHeaderCellDef> enabled </th>
+      <td mat-cell *matCellDef="let products"> {{products.enabled}} </td>
+    </ng-container>
+
+     <!-- min Column -->
+     <ng-container matColumnDef="min">
+      <th mat-header-cell *matHeaderCellDef> min </th>
+      <td mat-cell *matCellDef="let products"> {{products.min}} </td>
+    </ng-container>
+
+     <!-- max Column -->
+     <ng-container matColumnDef="max">
+      <th mat-header-cell *matHeaderCellDef> max </th>
+      <td mat-cell *matCellDef="let products"> {{products.max}} </td>
+    </ng-container>
+
+     <!-- Button edit -->
+     <ng-container matColumnDef="update">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let products">
+        <button mat-icon-button color="primary" (click)="update(products)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Button delete -->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let products">
+        <button mat-icon-button color="warn" (click)="delete(products)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+   <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
+  <button mat-stroked-button [routerLink]="['/products/form']">Nuevo Producto</button>
 
-  <button class="btn btn-info" type="button" [routerLink]="['/products/form']">Nuevo Producto</button>
+  <!--<button class="btn btn-info" type="button" [routerLink]="['/products/form']">Nuevo Producto</button>-->
 
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Name</th>
-      <th scope="col">inInventory</th>
-      <th scope="col">enabled</th>
-      <th scope="col">min</th>
-      <th scope="col">max</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product of products">
-      <th scope="row">{{product.id}}</th>
-      <td>{{product.name}}</td>
-      <td>{{product.inInventory}}</td>
-      <td>{{product.enabledProduct}}</td>
-      <td>{{product.min}}</td>
-      <td>{{product.max}}</td>
-    </tr>
-  </tbody>
-</table>
 </div>

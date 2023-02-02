@@ -1,23 +1,16 @@
-<!-- <app-img [img]="product.image"></app-img>
-<h2>{{ product.name}}</h2>
-<p>{{product.inInventory}}</p>
-<p>{{product.enabled}}</p>
-<p>{{product.min}}</p>
-<p>{{product.max}}</p> -->
-
 <div class="container col-md-6">
   <div class="card">
     <div class="card-header">
       <h2 class="text-center">Agregar Producto</h2>
     </div>
-    <form [formGroup]="addForm" (ngSubmit)="addProduct()">
+    <form [formGroup]="editForm" (ngSubmit)="updateProduct()">
 
       <div class="row px-4">
         <div class="col">
           <mat-form-field class="input-form-field">
             <input matInput appOnlynumberletters maxlength="50" formControlName="name" name="name" required
               placeholder="Nombre Producto:" id="name">
-            <mat-error *ngIf="!addForm.controls['name'].valid && addForm.controls['name'].touched">
+            <mat-error *ngIf="!editForm.controls['name'].valid && editForm.controls['name'].touched">
               <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <span
                 class="sr-only">Error:</span>
               Campo requerido
@@ -34,7 +27,7 @@
               <mat-option value="true">True</mat-option>
               <mat-option value="false">False</mat-option>
             </mat-select>
-            <mat-error *ngIf="!addForm.controls['enabled'].valid && addForm.controls['enabled'].touched">
+            <mat-error *ngIf="!editForm.controls['enabled'].valid && editForm.controls['enabled'].touched">
               <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <span
                 class="sr-only">Error:</span>
               Campo requerido
@@ -48,7 +41,7 @@
           <mat-form-field class="input-form-field">
             <input matInput appOnlyNumber maxlength="10" formControlName="inInventory" name="inInventory" required
               placeholder="Total Inventario:" id="inInventory">
-            <mat-error *ngIf="!addForm.controls['inInventory'].valid && addForm.controls['inInventory'].touched">
+            <mat-error *ngIf="!editForm.controls['inInventory'].valid && editForm.controls['inInventory'].touched">
               <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <span
                 class="sr-only">Error:</span>
               Campo requerido
@@ -62,7 +55,7 @@
           <mat-form-field class="input-form-field">
             <input matInput appOnlyNumber maxlength="10" formControlName="min" name="min" required
               placeholder="Mínimo:" id="min">
-            <mat-error *ngIf="!addForm.controls['min'].valid && addForm.controls['min'].touched">
+            <mat-error *ngIf="!editForm.controls['min'].valid && editForm.controls['min'].touched">
               <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <span
                 class="sr-only">Error:</span>
               Campo requerido
@@ -76,7 +69,7 @@
           <mat-form-field class="input-form-field">
             <input matInput appOnlyNumber maxlength="10" formControlName="max" name="max" required
               placeholder="Máximo:" id="max">
-            <mat-error *ngIf="!addForm.controls['max'].valid && addForm.controls['max'].touched">
+            <mat-error *ngIf="!editForm.controls['max'].valid && editForm.controls['max'].touched">
               <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <span
                 class="sr-only">Error:</span>
               Campo requerido
@@ -87,7 +80,7 @@
 
       <div class="row px-4">
         <div class="col">
-          <button mat-button color="primary" [disabled]="!addForm.valid">
+          <button mat-button color="primary" [disabled]="!editForm.valid">
             <mat-icon>check</mat-icon>
             Aceptar
           </button>
@@ -102,3 +95,4 @@
     </form>
   </div>
 </div>
+
